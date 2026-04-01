@@ -14,6 +14,7 @@ import os
 
 DATA_DIR = os.environ.get("DATA_DIR", "/data")
 os.makedirs(DATA_DIR, exist_ok=True)
+PORT = int(os.environ.get("PORT", "8080"))
 
 @dataclass
 class Todo:
@@ -110,4 +111,4 @@ def delete(tenant: str, id: int):
     get_todos(tenant).delete(id)
     return ''
 
-serve(host='0.0.0.0', port=8080)
+serve(host='0.0.0.0', port=PORT)
