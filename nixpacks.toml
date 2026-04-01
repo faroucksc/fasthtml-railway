@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["python312"]
+
+[phases.install]
+cmds = ["curl -LsSf https://astral.sh/uv/install.sh | sh", "export PATH=$HOME/.local/bin:$PATH"]
+
+[start]
+cmd = "export PATH=$HOME/.local/bin:$PATH && uv run main.py"
